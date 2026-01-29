@@ -1,8 +1,8 @@
-// using UnityEngine;
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine.UI;
-// using TMPro;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class Choice_manager : MonoBehaviour
 {
@@ -10,10 +10,10 @@ public class Choice_manager : MonoBehaviour
     public TextMeshProUGUI Choice1_Text;
     public TextMeshProUGUI Choice2_Text;
 
-    //     public bool choice_is_done = false;
+    public bool choice_is_done = false;
 
-    //     public Animator animator;
-    //     public float text_speed = 0.6f;
+    public Animator animator;
+    public float text_speed = 0.6f;
 
     public Queue<string> Choice_1_queue;
     public Queue<string> Choice_2_queue;
@@ -61,36 +61,36 @@ public class Choice_manager : MonoBehaviour
         {
             animator.SetBool("isOpen", true);
             NPC_Text.text = dialogue.name;
-            // DialogueManager.StartDialogue(dialogue);
+            DialogueManager.StartDialogue(dialogue);
 
-            //         }
-            //     }
+        }
+    }
 
-            IEnumerator Type_Choice1(string text1)
-            {
-                Choice1_Text.text = "";
-                foreach (char letter in text1.ToCharArray())
-                {
-                    Choice1_Text.text += letter;
-                    yield return new WaitForSeconds(text_speed);
-                }
-            }
+    IEnumerator Type_Choice1(string text1)
+    {
+        Choice1_Text.text = "";
+        foreach (char letter in text1.ToCharArray())
+        {
+            Choice1_Text.text += letter;
+            yield return new WaitForSeconds(text_speed);
+        }
+    }
 
-            IEnumerator Type_Choice2(string text2)
-            {
-                Choice2_Text.text = "";
-                foreach (char letter in text2.ToCharArray())
-                {
-                    Choice2_Text.text += letter;
-                    yield return new WaitForSeconds(text_speed);
-                }
-            }
+    IEnumerator Type_Choice2(string text2)
+    {
+        Choice2_Text.text = "";
+        foreach (char letter in text2.ToCharArray())
+        {
+            Choice2_Text.text += letter;
+            yield return new WaitForSeconds(text_speed);
+        }
+    }
 
     public void EndChoice()
     {
         animator.SetBool("IsChoice", false);
         choice_is_done = true;
 
-        //     }
-
     }
+
+}
