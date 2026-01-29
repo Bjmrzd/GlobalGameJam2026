@@ -24,10 +24,10 @@ public class IntroManager : MonoBehaviour
 
     public IEnumerator Scene()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(6);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[0]);
         yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[1]);
         yield return WaitUntilDialogueDone();
     }
