@@ -10,16 +10,19 @@ public class IntroManager : MonoBehaviour
     public Image Whitener;
     public Image DarkBackground;
 
+    public bool scene_done = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(Scene());
+        scene_done = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public IEnumerator Scene()
@@ -48,4 +51,16 @@ public class IntroManager : MonoBehaviour
             yield return null;
         }
     }
+
+    // public IEnumerator Dialogue_choices()
+    // {
+    //     get;
+    //     {
+
+    //         if (scene_done == true)
+    //         {
+    //             FindFirstObjectByType<ChoiceManager>().Choices();
+    //         }
+    //     }
+    // }
 }
