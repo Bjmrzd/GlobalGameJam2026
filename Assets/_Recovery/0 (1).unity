@@ -420,12 +420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: Barmaid
+    name: 
     sentences:
-    - Welcome Player,  I am the one who will accompany you throughout your adventure,
-      to guide you and help you make the right choices.  You are going to attend
-      a masked ball that is held every 42 years.
-    - To attend this ball, I will let you take this mask.
+    - 
 --- !u!114 &226781269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +438,7 @@ MonoBehaviour:
   nameText: {fileID: 898776897}
   DialogueText: {fileID: 1216074786}
   text_speed: 0.07
+  dialogue_done: 0
   animator: {fileID: 1069946616}
 --- !u!4 &226781270
 Transform:
@@ -486,13 +484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8c4219efff6d925b1f5b51a8bb3c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntroManager
-  dialogue_1:
-    name: Barmaid
+  dialogues:
+  - name: Voices
     sentences:
-    - 'Welcome Player,  I am the one who will accompany you throughout your adventure,
-      to guide you and help you make the right choices. '
-    - You are going to attend a masked ball that is held every 42 years.
-    - To attend this ball, I will let you take this mask.
+    - You know what must be done.
+  - name: Voices
+    sentences:
+    - This is your missions and yours only.
 --- !u!4 &378146421
 Transform:
   m_ObjectHideFlags: 0

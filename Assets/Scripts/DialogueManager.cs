@@ -9,7 +9,9 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
-    public float text_speed = 0.1f;
+    public float text_speed = 0.6f;
+
+    public bool dialogue_done = false;
 
     public Animator animator;
     public Queue<string> sentences;
@@ -20,6 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogue_done = false;
         animator.SetBool("isOpen", true);
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -36,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            dialogue_done = true;
             return;
         }
         string sentence = sentences.Dequeue();
