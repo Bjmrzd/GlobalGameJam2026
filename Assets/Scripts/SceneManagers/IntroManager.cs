@@ -52,15 +52,5 @@ public class IntroManager : MonoBehaviour
         }
     }
 
-    // public IEnumerator Dialogue_choices()
-    // {
-    //     get;
-    //     {
 
-    //         if (scene_done == true)
-    //         {
-    //             FindFirstObjectByType<ChoiceManager>().Choices();
-    //         }
-    //     }
-    // }
 }

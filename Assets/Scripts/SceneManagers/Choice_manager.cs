@@ -4,89 +4,93 @@
 // using UnityEngine.UI;
 // using TMPro;
 
-// public class Choice_manager : MonoBehaviour
-// {
-//     public TextMeshProUGUI nameText;
-//     public TextMeshProUGUI Choice1_Text;
-//     public TextMeshProUGUI Choice2_Text;
+public class Choice_manager : MonoBehaviour
+{
+    public TextMeshProUGUI NPC_Text;
+    public TextMeshProUGUI Choice1_Text;
+    public TextMeshProUGUI Choice2_Text;
 
-//     public bool choice_is_done = false;
+    //     public bool choice_is_done = false;
 
-//     public Animator animator;
-//     public float text_speed = 0.6f;
+    //     public Animator animator;
+    //     public float text_speed = 0.6f;
 
-//     public Queue<string> Choice_1;
-//     public Queue<string> Choice_2;
-
-
-//     void Start()
-//     {
-//         Choice_1 = new Queue<string>();
-//         Choice_2 = new Queue<string>();
-//     }
-
-//     public void init_choice(Choice_dialogue choice)
-//     {
-//         choice_is_done = false;
-//         animator.SetBool("IsChoice", true);
-//         nameText.text = choice.name_NPC;
-//         foreach (string Choice_1 in choice.choice_1)
-//         {
-//             Choice_1.Enqueue(Choices_1);
-//         }
-//         foreach (string Choice_2 in choice.choice_2)
-//         {
-//             Choice_2.Enqueue(Choices_2);
-//         }
-//         StartChoice();
-//     }
+    public Queue<string> Choice_1_queue;
+    public Queue<string> Choice_2_queue;
 
 
-//     public void StartChoice()
-//     {
+    void Start()
+    {
+        Choice_1_queue = new Queue<string>();
+        Choice_2_queue = new Queue<string>();
+    }
 
-//         string Choices_1 = Choice_1.Dequeue();
-//         string Choices_2 = Choice_2.Dequeue();
-//         StartCoroutine(Type_Choice1(Choices_1));
-//         StartCoroutine(Type_Choice2(Choices_2));
-
-//     }
-//     public void Display_next_dialogue(Dialogue dialogue)
-//     {
-//         if (choice_is_done == true)
-//         {
-//             animator.SetBool("isOpen", true);
-//             nameText.text = dialogue.name;
-
-//         }
-//     }
-
-//     IEnumerator Type_Choice1(string Choice_1)
-//     {
-//         Choice_1.text = "";
-//         foreach (char letter in Choice_1.ToCharArray())
-//         {
-//             Choice_1.text += letter;
-//             yield return new WaitForSeconds(text_speed);
-//         }
-//     }
-
-//     IEnumerator Type_Choice2(string Choice_2)
-//     {
-//         Choice_2.text = "";
-//         foreach (char letter in Choice_2.ToCharArray())
-//         {
-//             Choice_2.text += letter;
-//             yield return new WaitForSeconds(text_speed);
-//         }
-//     }
-
-//     public void EndChoice()
-//     {
-//         animator.SetBool("IsChoice", false);
-
-//     }
+    public void init_choice(Choice_dialogue choice)
+    {
+        choice_is_done = false;
+        animator.SetBool("IsChoice", true);
+        NPC_Text.text = choice.name_NPC;
+        foreach (string Pick_1 in choice.choice_1)
+        {
+            Choice_1_queue.Enqueue(Pick_1);
+        }
+        foreach (string Pick_2 in choice.choice_2)
+        {
+            Choice_2_queue.Enqueue(Pick_2);
+        }
+        StartChoice();
+    }
 
 
+    public void StartChoice()
+    {
+        if (Choice_1_queue.Count == 0 || Choice_2_queue.Count == 0)
+            return;
 
-// }
+
+        string Pick_1 = Choice_1_queue.Dequeue();
+        string Pick_2 = Choice_2_queue.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(Type_Choice1(Pick_1));
+        StartCoroutine(Type_Choice2(Pick_2));
+
+    }
+    public void Display_next_dialogue(Dialogue dialogue)
+    {
+        if (choice_is_done == true)
+        {
+            animator.SetBool("isOpen", true);
+            NPC_Text.text = dialogue.name;
+            // DialogueManager.StartDialogue(dialogue);
+
+            //         }
+            //     }
+
+            IEnumerator Type_Choice1(string text1)
+            {
+                Choice1_Text.text = "";
+                foreach (char letter in text1.ToCharArray())
+                {
+                    Choice1_Text.text += letter;
+                    yield return new WaitForSeconds(text_speed);
+                }
+            }
+
+            IEnumerator Type_Choice2(string text2)
+            {
+                Choice2_Text.text = "";
+                foreach (char letter in text2.ToCharArray())
+                {
+                    Choice2_Text.text += letter;
+                    yield return new WaitForSeconds(text_speed);
+                }
+            }
+
+    public void EndChoice()
+    {
+        animator.SetBool("IsChoice", false);
+        choice_is_done = true;
+
+        //     }
+
+    }
