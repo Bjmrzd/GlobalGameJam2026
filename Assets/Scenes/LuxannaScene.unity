@@ -252,6 +252,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23503732}
   m_CullTransparentMesh: 1
+--- !u!1 &43134960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43134963}
+  - component: {fileID: 43134962}
+  - component: {fileID: 43134964}
+  m_Layer: 0
+  m_Name: NarrationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &43134962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43134960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5529c2f0e714d63f887d111179686f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  nameText: {fileID: 898776897}
+  DialogueText: {fileID: 1216074786}
+  text_speed: 0.07
+  dialogue_done: 0
+  animator: {fileID: 1069946616}
+--- !u!4 &43134963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43134960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43134964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43134960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329640933858c49b2aa83c9f9bcd6dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NarrationManager
+  nameText: {fileID: 0}
+  NarrationText: {fileID: 0}
+  text_speed: 0.6
+  narration_done: 0
+  animator: {fileID: 0}
 --- !u!1 &61919818
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +643,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378146419}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 0}
   m_Animations:
@@ -614,13 +681,6 @@ MonoBehaviour:
       opponents here.
     - I have not even introduced myself. I am Luxanna, and I am the host of this
       ball. I hope you find this event to your liking.
-  - name: 
-    sentences:
-    - 'The voice is more powerful and impatient than before. You feel that it absolutely
-      wants to get your attention. '
-    - You do not understand this situation at all, but you are nevertheless reassured
-      to see that the entity speaking to you does not seem to be able to physically
-      harm you.
   - name: Voices
     sentences:
     - It is her. You need to talk to her. You must continue.
@@ -631,10 +691,6 @@ MonoBehaviour:
     sentences:
     - Are you feeling alright ? You suddenly look very pale. You should drink a glass
       of fresh water.
-  - name: 
-    sentences:
-    - Luxanna calls out to the barmaid, who brings you a glass of water. Drinking
-      it revives you and you feel fully present again.
   - name: y/n
     sentences:
     - Thank you, I feel much better. I am not used to the kind of crowds that can
@@ -643,6 +699,16 @@ MonoBehaviour:
     sentences:
     - Well, that is perfect timing, as I was hoping to invite you to join me in my
       apartments so that we can play a game, just like you did with Silver.
+  narrations:
+  - sentences:
+    - 'The voice is more powerful and impatient than before. You feel that it absolutely
+      wants to get your attention. '
+    - You do not understand this situation at all, but you are nevertheless reassured
+      to see that the entity speaking to you does not seem to be able to physically
+      harm you.
+  - sentences:
+    - Luxanna calls out to the barmaid, who brings you a glass of water. Drinking
+      it revives you and you feel fully present again.
   DarkBackground: {fileID: 0}
 --- !u!1 &541402301
 GameObject:
@@ -1824,6 +1890,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 378146421}
   - {fileID: 226781270}
+  - {fileID: 43134963}
   - {fileID: 1137606537}
   - {fileID: 1069946617}
   - {fileID: 1101208233}

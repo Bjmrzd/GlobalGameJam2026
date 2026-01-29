@@ -38,28 +38,25 @@ public class LuxSceneManager : MonoBehaviour
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[2]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
-        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[3]);
-        yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(2f);
         FindFirstObjectByType<NarrationManager>().StartNarration(narrations[0]);
         yield return WaitUntilNarrationDone();
         yield return new WaitForSeconds(2f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[3]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(2f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[4]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(2f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[5]);
         yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(2f);
+        FindFirstObjectByType<NarrationManager>().StartNarration(narrations[1]);
+        yield return WaitUntilNarrationDone();
         yield return new WaitForSeconds(2f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[6]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[7]);
-        yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(2f);
-        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[8]);
-        yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(2f);
-        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[9]);
-        yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(2f);
-        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[10]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
         // Darkener.GetComponent<Animation>().Play("Fade_in_2");
@@ -70,6 +67,13 @@ public class LuxSceneManager : MonoBehaviour
     public IEnumerator WaitUntilDialogueDone()
     {
         while (FindFirstObjectByType<DialogueManager>().dialogue_done == false)
+        {
+            yield return null;
+        }
+    }
+    public IEnumerator WaitUntilNarrationDone()
+    {
+        while (FindFirstObjectByType<NarrationManager>().narration_done == false)
         {
             yield return null;
         }
