@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fade_out
+  m_Name: Fade_in_white
   serializedVersion: 7
   m_Legacy: 1
   m_Compressed: 0
@@ -31,17 +31,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.8333334
+        time: 2.3333333
         value: 0.99607843
-        inSlope: -0.0039215684
-        outSlope: -0.0039215684
+        inSlope: -0.0037647057
+        outSlope: -0.0037647057
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 4
-        value: 0.8235294
+        time: 4.1666665
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -70,7 +70,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4
+    m_StopTime: 4.1666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -100,17 +100,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.8333334
+        time: 2.3333333
         value: 0.99607843
-        inSlope: -0.0039215684
-        outSlope: -0.0039215684
+        inSlope: -0.0037647057
+        outSlope: -0.0037647057
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 4
-        value: 0.8235294
+        time: 4.1666665
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
