@@ -1,4 +1,4 @@
-// version de Clauclau
+
 
 using UnityEngine;
 using System.Collections.Generic;
@@ -50,6 +50,9 @@ public class Blackjack_logic : MonoBehaviour
     private int dealerScore = 0;
     private bool playerTurn = true;
 
+    private bool gameOver = false;
+
+
     void Start()
     {
         blackjackUI.SetActive(true);
@@ -57,6 +60,7 @@ public class Blackjack_logic : MonoBehaviour
 
     public void StartBlackjack()
     {
+        resultText.text = "";
         blackjackUI.SetActive(true);
         playerHand.Clear();
         dealerHand.Clear();
@@ -70,6 +74,7 @@ public class Blackjack_logic : MonoBehaviour
 
     public void DrawCard(bool isPlayer)
     {
+        if (!playerTurn || gameOver) return;
         Cards newCard = new Cards();
         newCard.Get_value();
 
@@ -115,18 +120,36 @@ public class Blackjack_logic : MonoBehaviour
 
     public void CheckWinner()
     {
+
         if (playerScore > 21 || (dealerScore <= 21 && dealerScore > playerScore))
+        {
             resultText.text = "Le croupier gagne !";
+
+        }
         else if (dealerScore > 21 || playerScore > dealerScore)
+        {
             resultText.text = "Tu gagnes !";
+
+        }
         else
+        {
             resultText.text = "Égalité !";
+
+        }
+        gameOver = true;
+
+    }
+
+    public void RestartGame()
+    {
+        resultText.text = "";
+        StartBlackjack();
     }
 
     public void QuitBlackjack()
     {
         blackjackUI.SetActive(false);
-        dialogueManager.DisplayNextSentence(); // Reprendre le dialogue
+        dialogueManager.DisplayNextSentence();
     }
 
     Sprite GetSpriteForCard(Cards_deck value, Color suit)
@@ -137,96 +160,4 @@ public class Blackjack_logic : MonoBehaviour
 
 }
 
-
-// Benjamin
-
-// using UnityEngine;
-// using System;
-
-// public class Blackjack_logic : MonoBehaviour
-// {
-//     public enum Cards_deck
-//     {
-//         Two = 2,
-//         Three,
-//         Four,
-//         Five,
-//         Six,
-//         Seven,
-//         Eight,
-//         Nine,
-//         Ten,
-//         Jack,
-//         Queen,
-//         King,
-//         Ace,
-//     }
-//     public enum Color
-//     {
-//         Spades = 1,
-//         Diamonds,
-//         Clubs,
-//         Hearts,
-
-//     }
-
-//     public class Cards
-//     {
-//         public Cards_deck cards;
-
-//         public Color Suits;
-
-
-//         public int Points;
-
-//         private static System.Random value = new System.Random();
-//         public void Get_value()
-//         {
-//             cards = (Cards_deck)value.Next(2, 15);
-//             Suits = (Color)value.Next(0, 4);
-//             Score();
-//         }
-//         public int Score()
-//         {
-
-//             if ((int)cards <= 10)
-//             {
-//                 Points = (int)cards;
-//                 return Points;
-//             }
-//             else if (cards == Cards_deck.Ace)
-//             {
-//                 Points = 11;
-//                 return Points;
-//             }
-//             else
-//             {
-//                 Points = 10;
-//                 return Points;
-//             }
-//         }
-//     }
-
-
-//     public class Game
-//     {
-//         public int round;
-//         public bool end_of_round = false;
-
-
-
-//         public void init_round()
-//         {
-//             round = 0;
-//             if (end_of_round == true)
-//             {
-//                 round++;
-//                 end_of_round = false;
-
-//             }
-
-//         }
-
-//     }
-// }
 
