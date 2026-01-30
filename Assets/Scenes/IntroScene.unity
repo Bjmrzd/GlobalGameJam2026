@@ -423,6 +423,7 @@ MonoBehaviour:
   text_speed: 0.07
   dialogue_done: 0
   animator: {fileID: 1069946616}
+  isTyping: 0
 --- !u!4 &226781270
 Transform:
   m_ObjectHideFlags: 0
@@ -1782,8 +1783,9 @@ MonoBehaviour:
   Choice1_Text: {fileID: 1972423629}
   Choice2_Text: {fileID: 1998052063}
   choice_is_done: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1379216915}
   text_speed: 0.6
+  dialogueManager: {fileID: 226781269}
 --- !u!95 &1379216915
 Animator:
   serializedVersion: 7

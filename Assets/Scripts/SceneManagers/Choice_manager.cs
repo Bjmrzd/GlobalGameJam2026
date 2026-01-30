@@ -66,7 +66,7 @@ public class Choice_manager : MonoBehaviour
     {
         if (choice_is_done == true)
         {
-            animator.SetBool("isOpen", true);
+            animator.SetBool("IsChoice", true);
             NPC_Text.text = dialogue.name;
             dialogueManager.StartDialogue(dialogue);
 

@@ -216,7 +216,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 43134964}
         m_TargetAssemblyTypeName: NarrationManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+        m_MethodName: Display_NextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -313,6 +313,7 @@ MonoBehaviour:
   text_speed: 0.07
   narration_done: 0
   animator: {fileID: 1069946616}
+  isTyping: 0
 --- !u!1 &61919818
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +485,7 @@ MonoBehaviour:
   text_speed: 0.07
   dialogue_done: 0
   animator: {fileID: 1069946616}
+  isTyping: 0
 --- !u!4 &226781270
 Transform:
   m_ObjectHideFlags: 0
