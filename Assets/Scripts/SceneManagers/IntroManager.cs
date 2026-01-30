@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System;
 
 public class IntroManager : MonoBehaviour
 {
@@ -64,11 +68,11 @@ public class IntroManager : MonoBehaviour
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
         Whitener.GetComponent<Animation>().Play("fade_out_white");
+        yield return new WaitForSeconds(2f);
         characters[0].GetComponent<Image>().color = new Color(characters[0].GetComponent<Image>().color.r, characters[0].GetComponent<Image>().color.g, characters[0].GetComponent<Image>().color.b, 0f);
         characters[1].GetComponent<Image>().color = new Color(characters[1].GetComponent<Image>().color.r, characters[1].GetComponent<Image>().color.g, characters[1].GetComponent<Image>().color.b, 0f);
         characters[2].GetComponent<Image>().color = new Color(characters[2].GetComponent<Image>().color.r, characters[2].GetComponent<Image>().color.g, characters[2].GetComponent<Image>().color.b, 255f);
         characters[3].GetComponent<Image>().color = new Color(characters[3].GetComponent<Image>().color.r, characters[3].GetComponent<Image>().color.g, characters[3].GetComponent<Image>().color.b, 255f);
-        yield return new WaitForSeconds(2f);
         Whitener.GetComponent<Animation>().Play("Fade_in_white");
         yield return new WaitForSeconds(1f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[8]);
@@ -100,6 +104,8 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[16]);
         yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public IEnumerator WaitUntilDialogueDone()

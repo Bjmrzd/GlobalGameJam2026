@@ -374,7 +374,7 @@ MonoBehaviour:
   m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
-  m_sharedMaterial: {fileID: 232150609081664722, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
+  m_sharedMaterial: {fileID: -4895699745628713602, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -499,6 +499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378d54e1db6ec4b3aaeac329f0bdab0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackjack_logic
+  cardPrefab: {fileID: 0}
+  playerCardArea: {fileID: 0}
+  dealerCardArea: {fileID: 0}
   playerScoreText: {fileID: 0}
   dealerScoreText: {fileID: 0}
   resultText: {fileID: 0}
@@ -906,6 +909,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378d54e1db6ec4b3aaeac329f0bdab0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackjack_logic
+  cardPrefab: {fileID: 0}
+  playerCardArea: {fileID: 0}
+  dealerCardArea: {fileID: 0}
   playerScoreText: {fileID: 0}
   dealerScoreText: {fileID: 0}
   resultText: {fileID: 0}
@@ -979,8 +985,8 @@ Canvas:
   m_GameObject: {fileID: 541402301}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1137606536}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1078,7 +1084,7 @@ MonoBehaviour:
   m_text: Daniel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
-  m_sharedMaterial: {fileID: 232150609081664722, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
+  m_sharedMaterial: {fileID: -4895699745628713602, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1684,7 +1690,7 @@ MonoBehaviour:
   m_text: Hello
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
-  m_sharedMaterial: {fileID: 232150609081664722, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
+  m_sharedMaterial: {fileID: -4895699745628713602, guid: 646242a749ec6812da3015c90e389ca5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
