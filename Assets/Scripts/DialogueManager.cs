@@ -7,7 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
-    public float text_speed = 0.2f;
+    public float text_speed = 0.01f;
     public bool dialogue_done = false;
     public Animator animator;
     public Queue<string> sentences;

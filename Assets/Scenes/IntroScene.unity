@@ -439,6 +439,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &289564078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289564079}
+  - component: {fileID: 289564080}
+  m_Layer: 0
+  m_Name: Character_left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &289564079
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289564078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 725.5034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1509504038}
+  m_Father: {fileID: 541402305}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -634.68823, y: -357.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &289564080
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289564078}
+  m_CullTransparentMesh: 1
 --- !u!1 &378146419
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,8 +494,8 @@ GameObject:
   m_Component:
   - component: {fileID: 378146421}
   - component: {fileID: 378146420}
-  - component: {fileID: 378146422}
   - component: {fileID: 378146423}
+  - component: {fileID: 378146424}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -479,10 +524,53 @@ MonoBehaviour:
     - This is your mission and yours only.
   - name: Voices
     sentences:
-    - Do not disappoint us.
+    - Do no disappoint us.
   - name: 
     sentences:
-    - 
+    - You find yourself in a greatly illuminated... Ballroom.
+    - Your head feels heavy, but a light music is the only sound reaching you apart
+      from periodic glass setting sounds, so you find your senses again easily.
+    - The big room in front of you seems empty, except from a barmaid behind the
+      opposite counter, cleaning her tools.
+    - She spots you, stops her action for a moment, but resumes, unalarmed.
+    - Too lost to wander on your own, you decide to join her.
+  - name: Barmaid
+    sentences:
+    - 'Welcome Player,  I am the one who will accompany you throughout your adventure,
+      to guide you and help you make the right choices. '
+    - You are going to attend a masked ball that is held every 42 years, but it seems
+      you ran here early.
+    - To attend this ball, I will let you take this mask.
+  - name: Barmaid
+    sentences:
+    - You must keep it on for the entire duration of the event. It is very important. 
+      To ensure everyone's anonymity , we ask that you do not remove it.
+    - During this ball, various people may approach you.  Your interactions will
+      have consequences. Keep that in mind.
+    - Keep that in mind. Some interactions will be beneficial  for your relationships
+      with the guests attending the evening.
+  - name: Barmaid
+    sentences:
+    - Others, if accumulated, could be detrimental to your relationships.
+    - You are one of the first people to be here.  I will ask you to wait until all
+      the participants are present to start the ball.   While you wait, would you
+      like something to drink?
+  - name: Barmaid
+    sentences:
+    - You gladly take the free drink, and taste its fruity and herbal flavors. But
+      as you turn your head towards the barmaid to thank her, it doesn't look like
+      she's open for discussion.
+  - name: Barmaid
+    sentences:
+    - You gladly take the free drink, and taste its fruity and herbal flavors. But
+      as you turn your head towards the barmaid to thank her, it doesn't look like
+      she's open for discussion.
+  sfx:
+  - {fileID: 378146424}
+  musics:
+  - {fileID: 0}
+  characters:
+  - {fileID: 1886303718}
   Darkener: {fileID: 1172802994}
   Whitener: {fileID: 473252421}
   DarkBackground: {fileID: 2039007807}
@@ -502,7 +590,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &378146422
+--- !u!111 &378146423
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378146419}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: a9468fe631bc567ff9bc34a5bdd8781d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 42d82b220086a01ef8a55b1db3071c17, type: 2}
+  - {fileID: 7400000, guid: d35f354b6bad5866fa1ff535be1342ae, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!82 &378146424
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,16 +621,16 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ea1dfbbaf1f3ce657b882a1c621892fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 274.67468
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -599,23 +705,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!111 &378146423
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378146419}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: a9468fe631bc567ff9bc34a5bdd8781d, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a9468fe631bc567ff9bc34a5bdd8781d, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &473252418
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +896,8 @@ RectTransform:
   - {fileID: 911994682}
   - {fileID: 473252419}
   - {fileID: 2039007806}
+  - {fileID: 289564079}
+  - {fileID: 544977949}
   - {fileID: 2118288452}
   - {fileID: 1546189544}
   - {fileID: 1172802993}
@@ -819,6 +910,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &544977948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544977949}
+  m_Layer: 0
+  m_Name: Character_right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544977949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544977948}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 317, y: -27, z: 3}
+  m_LocalScale: {x: 3.5, y: 5.35, z: 5.35}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1886303717}
+  m_Father: {fileID: 541402305}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898776895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1202,7 @@ Transform:
   m_GameObject: {fileID: 1069946615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 602.5795, y: -0.00001001358, z: 1141.275}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1887,6 +2010,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1509504037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509504038}
+  m_Layer: 0
+  m_Name: Player_idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1509504038
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509504037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 289564079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1528883270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,6 +2197,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546189543}
   m_CullTransparentMesh: 1
+--- !u!1 &1886303716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886303717}
+  - component: {fileID: 1886303719}
+  - component: {fileID: 1886303718}
+  - component: {fileID: 1886303720}
+  m_Layer: 0
+  m_Name: Barmaid_idle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1886303717
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886303716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.23, y: 1.34, z: 1.34}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 544977949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28.9, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1886303718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886303716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c85b44db0c08f27c92236c809cd02d3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1886303719
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886303716}
+  m_CullTransparentMesh: 1
+--- !u!111 &1886303720
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886303716}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 2f5946689f01946798996cde09e215b6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &1972423626
 GameObject:
   m_ObjectHideFlags: 0
