@@ -1,0 +1,1 @@
+Le ou les Dieux et Démons de ce monde souhaitent tester les humains, leurs vertus ainsi que leurs pêchés. Notre joueur est donc envoyé dans le Manoir afin de passer un test malgré iel, ce qu'iel découvrira en le passant ou non. Le joueur arrivera face à multiples personnalités qui testeront plusieurs de ses valeurs.

@@ -1,0 +1,3 @@
+Créer un dossier pour chaque long dialogue (entre jeux, entre scène, donc si un dialogue se passe entre 2 endroits, il faut 2 dossiers de dialogue). Essayez de numéroter les dossiers de dialogues ou au moins de faire apparaître une chronologie pour savoir où il se place parmis le gameplay.
+
+3 4 lignes par réplique, mettre le nom du personnage qui parle et diviser les notes sur Obsidian en : groupe de répliques qui se suivent, choix divergents, puis mettre ce dialogue en visuel avec un drawing

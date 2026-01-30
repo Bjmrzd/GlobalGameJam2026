@@ -1,4 +1,6 @@
-# GlobalGameJam2026
+# GlobalGameJam2026 - Conception
+
+Welcome on the Conception branch of our project, where all team members shared their ideas, inspirations, assets that could be used, etc. Don't mind the mess !
 
 ## About us
 
