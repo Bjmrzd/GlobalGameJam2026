@@ -15,6 +15,9 @@ public class Choice_manager : MonoBehaviour
     public Animator animator;
     public float text_speed = 0.6f;
 
+    [SerializeField] DialogueManager dialogueManager;
+
+
     public Queue<string> Choice_1_queue;
     public Queue<string> Choice_2_queue;
 
@@ -29,6 +32,10 @@ public class Choice_manager : MonoBehaviour
     {
         choice_is_done = false;
         animator.SetBool("IsChoice", true);
+
+        Choice_1_queue.Clear();
+        Choice_2_queue.Clear();
+
         NPC_Text.text = choice.name_NPC;
         foreach (string Pick_1 in choice.choice_1)
         {
@@ -61,7 +68,7 @@ public class Choice_manager : MonoBehaviour
         {
             animator.SetBool("isOpen", true);
             NPC_Text.text = dialogue.name;
-            DialogueManager.StartDialogue(dialogue);
+            dialogueManager.StartDialogue(dialogue);
 
         }
     }

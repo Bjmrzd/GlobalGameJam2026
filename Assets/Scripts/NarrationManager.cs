@@ -24,36 +24,44 @@ public class NarrationManager : MonoBehaviour
     {
         narration_done = false;
         animator.SetBool("isOpen", true);
+        nameText.text = narration.name;
         sentences.Clear();
 
         foreach (string sentence in narration.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        DisplayNextSentence();
+        Display_NextSentence();
     }
 
-    public void DisplayNextSentence()
+
+    public void Display_NextSentence()
     {
+
+
         if (sentences.Count == 0)
         {
             EndNarration();
             narration_done = true;
             return;
         }
+
+
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        // NarrationText.text = sentence;
+        StartCoroutine(Type_Sentence(sentence));
+
     }
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator Type_Sentence(string sentence)
     {
+
         NarrationText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             NarrationText.text += letter;
             yield return new WaitForSeconds(text_speed);
         }
+
     }
     void EndNarration()
     {

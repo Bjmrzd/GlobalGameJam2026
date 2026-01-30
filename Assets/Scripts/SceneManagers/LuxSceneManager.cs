@@ -11,16 +11,18 @@ public class LuxSceneManager : MonoBehaviour
     // public Image Whitener;
     public Image DarkBackground;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         StartCoroutine(Scene());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public IEnumerator Scene()
@@ -28,7 +30,7 @@ public class LuxSceneManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         // Darkener.GetComponent<Animation>().Play("Fade_in_1");
         // this.GetComponent<Animation>().Play("SoundFade_in");
-        // yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(3);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[0]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
@@ -70,6 +72,9 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
+
+
+
     }
     public IEnumerator WaitUntilNarrationDone()
     {
@@ -77,5 +82,6 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
+
     }
 }

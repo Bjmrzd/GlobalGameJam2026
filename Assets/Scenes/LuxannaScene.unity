@@ -214,6 +214,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 43134964}
+        m_TargetAssemblyTypeName: NarrationManager, Assembly-CSharp
+        m_MethodName: DisplayNextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &23503735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +273,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43134963}
-  - component: {fileID: 43134962}
   - component: {fileID: 43134964}
   m_Layer: 0
   m_Name: NarrationManager
@@ -270,23 +281,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &43134962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43134960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5529c2f0e714d63f887d111179686f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  nameText: {fileID: 898776897}
-  DialogueText: {fileID: 1216074786}
-  text_speed: 0.07
-  dialogue_done: 0
-  animator: {fileID: 1069946616}
 --- !u!4 &43134963
 Transform:
   m_ObjectHideFlags: 0
@@ -314,11 +308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329640933858c49b2aa83c9f9bcd6dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NarrationManager
-  nameText: {fileID: 0}
-  NarrationText: {fileID: 0}
-  text_speed: 0.6
+  nameText: {fileID: 898776897}
+  NarrationText: {fileID: 1216074786}
+  text_speed: 0.07
   narration_done: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1069946616}
 --- !u!1 &61919818
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,15 +694,19 @@ MonoBehaviour:
     - Well, that is perfect timing, as I was hoping to invite you to join me in my
       apartments so that we can play a game, just like you did with Silver.
   narrations:
-  - sentences:
+  - name: y/n
+    sentences:
     - 'The voice is more powerful and impatient than before. You feel that it absolutely
       wants to get your attention. '
     - You do not understand this situation at all, but you are nevertheless reassured
       to see that the entity speaking to you does not seem to be able to physically
       harm you.
-  - sentences:
-    - Luxanna calls out to the barmaid, who brings you a glass of water. Drinking
-      it revives you and you feel fully present again.
+  - name: y/n
+    sentences:
+    - Luxanna calls out to the barmaid, who brings you a glas
+  - name: y/n
+    sentences:
+    - ...
   DarkBackground: {fileID: 0}
 --- !u!1 &541402301
 GameObject:
