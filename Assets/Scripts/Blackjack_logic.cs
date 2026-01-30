@@ -6,6 +6,10 @@ using TMPro;
 
 public class Blackjack_logic : MonoBehaviour
 {
+
+    public GameObject cardPrefab;
+    public Transform playerCardArea;
+    public Transform dealerCardArea;
     public enum Cards_deck { Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace }
     public enum Color { Spades, Diamonds, Clubs, Hearts }
 
@@ -14,6 +18,10 @@ public class Blackjack_logic : MonoBehaviour
         public Cards_deck cards;
         public Color Suits;
         public int Points;
+
+
+
+
 
         public void Get_value()
         {
@@ -62,8 +70,19 @@ public class Blackjack_logic : MonoBehaviour
 
     public void DrawCard(bool isPlayer)
     {
+
         Cards newCard = new Cards();
         newCard.Get_value();
+
+        Transform area = isPlayer ? playerCardArea : dealerCardArea;
+
+        GameObject cardGO = Instantiate(cardPrefab, area);
+        cardGO.transform.localScale = Vector3.one;
+
+        CardViewUI view = cardGO.GetComponent<CardViewUI>();
+        view.cardValue = newCard.Points;
+        view.isPlayerCard = isPlayer;
+
 
         if (isPlayer)
         {

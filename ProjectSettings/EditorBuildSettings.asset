@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: e2eeb3c3242c01a2d8569507f4bd8be8
   - enabled: 1
+    path: Assets/Scenes/Blackjack.unity
+    guid: 9a1b506808c3169acbf38916a7efd8af
+  - enabled: 1
     path: Assets/Scenes/LuxannaScene.unity
     guid: 09ff272f2fceac07a99fe4ae5f863a93
   - enabled: 1
