@@ -7,6 +7,6 @@ public class AudioButton : MonoBehaviour
 {
     public void Audio()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
     }
 }

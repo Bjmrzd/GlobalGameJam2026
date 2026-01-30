@@ -6,6 +6,6 @@ public class SettingsButton : MonoBehaviour
 {
     public void Settings()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 }
