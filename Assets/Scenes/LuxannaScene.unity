@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 583.2, y: -305.7}
+  m_AnchoredPosition: {x: 580, y: -245}
   m_SizeDelta: {x: 38.4857, y: 26.5848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23503734
@@ -451,6 +451,188 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61919818}
   m_CullTransparentMesh: 1
+--- !u!1 &168979017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168979022}
+  - component: {fileID: 168979021}
+  - component: {fileID: 168979020}
+  - component: {fileID: 168979019}
+  - component: {fileID: 168979018}
+  m_Layer: 0
+  m_Name: BlackJackManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &168979018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168979017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68090d465124007a28dea097648eddf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuxSceneManager
+  dialogues: []
+  narrations: []
+  DarkBackground: {fileID: 0}
+  blackjackLogic: {fileID: 0}
+--- !u!114 &168979019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168979017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378d54e1db6ec4b3aaeac329f0bdab0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blackjack_logic
+  playerScoreText: {fileID: 0}
+  dealerScoreText: {fileID: 0}
+  resultText: {fileID: 0}
+  blackjackUI: {fileID: 0}
+  dialogueManager: {fileID: 0}
+--- !u!111 &168979020
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168979017}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: a9468fe631bc567ff9bc34a5bdd8781d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!82 &168979021
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168979017}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 274.67468
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &168979022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168979017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.9057, y: 229.11496, z: 1680.1709}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226781267
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +695,7 @@ GameObject:
   - component: {fileID: 378146422}
   - component: {fileID: 378146423}
   - component: {fileID: 378146424}
+  - component: {fileID: 378146425}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -710,6 +893,24 @@ MonoBehaviour:
     sentences:
     - ...
   DarkBackground: {fileID: 0}
+  blackjackLogic: {fileID: 0}
+--- !u!114 &378146425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378146419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378d54e1db6ec4b3aaeac329f0bdab0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blackjack_logic
+  playerScoreText: {fileID: 0}
+  dealerScoreText: {fileID: 0}
+  resultText: {fileID: 0}
+  blackjackUI: {fileID: 0}
+  dialogueManager: {fileID: 0}
 --- !u!1 &541402301
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +1189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.5866}
+  m_AnchoredPosition: {x: 0, y: -0.58660126}
   m_SizeDelta: {x: 1271, y: 680.8674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911994683
@@ -1382,7 +1583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000015259}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 1271, y: 715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205986762
@@ -1674,7 +1875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288.1, y: -130.8}
+  m_AnchoredPosition: {x: -283, y: -60}
   m_SizeDelta: {x: 135.2038, y: 33.9985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546189545
@@ -1843,7 +2044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -248}
+  m_AnchoredPosition: {x: 0, y: -180.72}
   m_SizeDelta: {x: 297.1893, y: 65.8411}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118288453
@@ -1890,6 +2091,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 378146421}
   - {fileID: 226781270}
+  - {fileID: 168979022}
   - {fileID: 43134963}
   - {fileID: 1137606537}
   - {fileID: 1069946617}

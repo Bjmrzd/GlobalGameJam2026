@@ -75,9 +75,6 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
-
-
-
     }
     public IEnumerator WaitUntilNarrationDone()
     {
@@ -85,10 +82,9 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
-
     }
-    
-public IEnumerator WaitUntilBlackjackDone()
+
+    public IEnumerator WaitUntilBlackjackDone()
     {
         while (blackjackLogic.gameObject.activeSelf)
         {
@@ -96,9 +92,9 @@ public IEnumerator WaitUntilBlackjackDone()
         }
     }
 
-public void LaunchBlackjack()
-{
-    blackjackLogic.StartBlackjack();
-}
+    public void LaunchBlackjack()
+    {
+        blackjackLogic.StartBlackjack();
+    }
 }
 
