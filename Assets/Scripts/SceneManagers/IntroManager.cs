@@ -36,13 +36,14 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[2]);
         yield return WaitUntilDialogueDone();
-        yield return new WaitForSeconds(2f);
         this.GetComponent<Animation>().Play("SoundFadeOut");
+        yield return new WaitForSeconds(2f);
         Darkener.GetComponent<Animation>().Play("Fade_in_2");
         DarkBackground.GetComponent<Animation>().Play("Background_disappears");
         Whitener.GetComponent<Animation>().Play("Fade_in_white");
         yield return new WaitForSeconds(4.5f);
         this.sfx[0].Stop();
+        this.musics[0].GetComponent<Animation>().Play("main_hub_fade_in");
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[3]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
@@ -63,8 +64,42 @@ public class IntroManager : MonoBehaviour
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(2f);
         Whitener.GetComponent<Animation>().Play("fade_out_white");
+        characters[0].GetComponent<Image>().color = new Color(characters[0].GetComponent<Image>().color.r, characters[0].GetComponent<Image>().color.g, characters[0].GetComponent<Image>().color.b, 0f);
+        characters[1].GetComponent<Image>().color = new Color(characters[1].GetComponent<Image>().color.r, characters[1].GetComponent<Image>().color.g, characters[1].GetComponent<Image>().color.b, 0f);
+        characters[2].GetComponent<Image>().color = new Color(characters[2].GetComponent<Image>().color.r, characters[2].GetComponent<Image>().color.g, characters[2].GetComponent<Image>().color.b, 255f);
+        characters[3].GetComponent<Image>().color = new Color(characters[3].GetComponent<Image>().color.r, characters[3].GetComponent<Image>().color.g, characters[3].GetComponent<Image>().color.b, 255f);
         yield return new WaitForSeconds(2f);
         Whitener.GetComponent<Animation>().Play("Fade_in_white");
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[8]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[9]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[10]);
+        yield return WaitUntilDialogueDone();
+        // characters[2].getComponent<Animation>().Play("Character_disappears");
+        // yield return new WaitForSeconds(1f);
+        // characters[1].getComponent<Animation>().Play("PlayerAppears");
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[11]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[12]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[13]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[14]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[15]);
+        yield return WaitUntilDialogueDone();
+        yield return new WaitForSeconds(1f);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[16]);
+        yield return WaitUntilDialogueDone();
     }
 
     public IEnumerator WaitUntilDialogueDone()
