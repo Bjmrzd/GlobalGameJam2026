@@ -52,7 +52,7 @@ public class Blackjack_logic : MonoBehaviour
 
     void Start()
     {
-        blackjackUI.SetActive(false);
+        blackjackUI.SetActive(true);
     }
 
     public void StartBlackjack()
@@ -70,18 +70,23 @@ public class Blackjack_logic : MonoBehaviour
 
     public void DrawCard(bool isPlayer)
     {
-
         Cards newCard = new Cards();
         newCard.Get_value();
 
         Transform area = isPlayer ? playerCardArea : dealerCardArea;
 
+
         GameObject cardGO = Instantiate(cardPrefab, area);
         cardGO.transform.localScale = Vector3.one;
+
 
         CardViewUI view = cardGO.GetComponent<CardViewUI>();
         view.cardValue = newCard.Points;
         view.isPlayerCard = isPlayer;
+
+
+        Sprite sprite = GetSpriteForCard(newCard.cards, newCard.Suits);
+        view.SetCardSprite(sprite);
 
 
         if (isPlayer)
@@ -98,6 +103,7 @@ public class Blackjack_logic : MonoBehaviour
             dealerScoreText.text = "Croupier: " + dealerScore;
         }
     }
+
 
     public void EndTurn()
     {
@@ -122,6 +128,13 @@ public class Blackjack_logic : MonoBehaviour
         blackjackUI.SetActive(false);
         dialogueManager.DisplayNextSentence(); // Reprendre le dialogue
     }
+
+    Sprite GetSpriteForCard(Cards_deck value, Color suit)
+    {
+        string name = value.ToString().ToLower() + "_of_" + suit.ToString().ToLower();
+        return Resources.Load<Sprite>("Sprites/Cards/" + name);
+    }
+
 }
 
 

@@ -1983,9 +1983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378d54e1db6ec4b3aaeac329f0bdab0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackjack_manager
-  cardPrefab: {fileID: 0}
-  playerCardArea: {fileID: 0}
-  dealerCardArea: {fileID: 0}
+  cardPrefab: {fileID: 920972181875694378, guid: 2a1e434b2ef285384a2fff987be3c63e, type: 3}
+  playerCardArea: {fileID: 1901778120}
+  dealerCardArea: {fileID: 268907405}
   playerScoreText: {fileID: 1062518454}
   dealerScoreText: {fileID: 2401236}
   resultText: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 2000520142}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
