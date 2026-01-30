@@ -51,6 +51,8 @@ public class IntroManager : MonoBehaviour
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[4]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(1f);
+        characters[1].GetComponent<Animation>().Play("PlayerAppears");
+        yield return new WaitForSeconds(1f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[5]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(1f);
@@ -59,8 +61,9 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[7]);
         yield return WaitUntilDialogueDone();
-        Whitener.GetComponent<Animation>().Play("Fade_out_white");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
+        Whitener.GetComponent<Animation>().Play("fade_out_white");
+        yield return new WaitForSeconds(2f);
         Whitener.GetComponent<Animation>().Play("Fade_in_white");
     }
 

@@ -30,7 +30,6 @@ public class NarrationManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-        Display_NextSentence();
     }
 
     public void Display_NextSentence()

@@ -7,9 +7,8 @@ public class LuxSceneManager : MonoBehaviour
 {
     public Dialogue[] dialogues;
     public Narration[] narrations;
-    // public Image Darkener;
-    // public Image Whitener;
     public Image DarkBackground;
+    public Blackjack_logic blackjackLogic;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,8 +27,6 @@ public class LuxSceneManager : MonoBehaviour
     public IEnumerator Scene()
     {
         yield return new WaitForSeconds(0.1f);
-        // Darkener.GetComponent<Animation>().Play("Fade_in_1");
-        // this.GetComponent<Animation>().Play("SoundFade_in");
         yield return new WaitForSeconds(3);
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[0]);
         yield return WaitUntilDialogueDone();
@@ -67,9 +64,9 @@ public class LuxSceneManager : MonoBehaviour
         FindFirstObjectByType<DialogueManager>().StartDialogue(dialogues[8]);
         yield return WaitUntilDialogueDone();
         yield return new WaitForSeconds(1f);
-        // Darkener.GetComponent<Animation>().Play("Fade_in_2");
         DarkBackground.GetComponent<Animation>().Play("Background_disappears");
-        // Whitener.GetComponent<Animation>().Play("Fade_in_white");
+        LaunchBlackjack();
+        yield return WaitUntilBlackjackDone();
     }
 
     public IEnumerator WaitUntilDialogueDone()
@@ -78,9 +75,6 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
-
-
-
     }
     public IEnumerator WaitUntilNarrationDone()
     {
@@ -88,6 +82,19 @@ public class LuxSceneManager : MonoBehaviour
         {
             yield return null;
         }
+    }
 
+    public IEnumerator WaitUntilBlackjackDone()
+    {
+        while (blackjackLogic.gameObject.activeSelf)
+        {
+            yield return null;
+        }
+    }
+
+    public void LaunchBlackjack()
+    {
+        blackjackLogic.StartBlackjack();
     }
 }
+
