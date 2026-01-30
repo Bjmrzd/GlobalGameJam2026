@@ -12,12 +12,15 @@ The protagonist attends a mysterious masked ball and faces challenges to overcom
 
 ## Team roles
 
-- Benjamin/Audrey/Jolyne : code development (c# and unity)
-- Ady : Sound design
-- Pascal/Emma : storytelling, code development
-- Marine : Sound design and storytelling
-- Jules/Jolyne : art development
-- Camille : resting
+- [Adylantes](https://github.com/adylantes) : Audio, Game Design, Music, Story and Narrative
+- [Akawere](https://github.com/julesgolcer) : 2D art, 3D art, Story and Narrative
+- [Audre](https://github.com/Audreypgt) : Programming, Story and Narrative
+- [Suricate](https://github.com/jolyne-mangeot) : 2D art, Programming, Project Managing, Story and Narrative
+- [Bjmrzd](https://github.com/Bjmrzd) : Game Development, Programming, Story and Narrative
+- [Cpanicuc](https://github.com/Caillou-25) : Resting, Story and Narrative
+- [LaGambini](https://github.com/lagambini) : 3D testing, Game Design, Writing, Story and Narrative
+- [Belladone](https://github.com/Belladone-Bzz) : Game Design, Writing, Story and Narrative
+- [Pacal](https://github.com/Pascal-Caudron) : Game Design, Writing, Story and Narrative
 
 ## Software used
 
