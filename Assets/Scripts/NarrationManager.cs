@@ -1,24 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using TMPro;
 
 public class NarrationManager : MonoBehaviour
 {
-
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI NarrationText;
     public float text_speed = 0.2f;
-
     public bool narration_done = false;
-
     public Animator animator;
     public Queue<string> sentences;
-
     public bool isTyping = false;
+    private Coroutine typingCoroutine;
 
-    public Coroutine typingCoroutine;
     void Start()
     {
         sentences = new Queue<string>();
@@ -38,31 +33,25 @@ public class NarrationManager : MonoBehaviour
         Display_NextSentence();
     }
 
-    IEnumerator EndTyping()
-    {
-        while (isTyping)
-            yield return null;
-        EndNarration();
-        narration_done = true;
-    }
-
     public void Display_NextSentence()
     {
-
-
         if (sentences.Count == 0)
         {
-            StartCoroutine(EndTyping());
+            EndNarration();
+            narration_done = true;
             return;
         }
 
+        if (isTyping && typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            isTyping = false;
+        }
 
         string sentence = sentences.Dequeue();
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(Type_Sentence(sentence));
-
     }
+
     IEnumerator Type_Sentence(string sentence)
     {
         isTyping = true;
@@ -74,10 +63,10 @@ public class NarrationManager : MonoBehaviour
         }
         isTyping = false;
     }
+
     void EndNarration()
     {
         animator.SetBool("isOpen", false);
-        Debug.Log("End of conversation");
+        Debug.Log("End of narration");
     }
-
 }

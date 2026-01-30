@@ -1,14 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEditor;
-using UnityEngine.UIElements;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
     public float text_speed = 0.2f;
@@ -16,11 +12,10 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public Queue<string> sentences;
     public bool isTyping = false;
-    public Coroutine typingCoroutine;
+    private Coroutine typingCoroutine;
 
     void Start()
     {
-
         sentences = new Queue<string>();
     }
 
@@ -38,28 +33,22 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-
-    IEnumerator EndTyping()
-    {
-        while (isTyping)
-            yield return null;
-        EndDialogue();
-        dialogue_done = true;
-    }
-    
     public void DisplayNextSentence()
     {
-
         if (sentences.Count == 0)
         {
-            StartCoroutine(EndTyping());
+            EndDialogue();
+            dialogue_done = true;
             return;
         }
 
-        string sentence = sentences.Dequeue();
-
-        if (typingCoroutine != null)
+        if (isTyping && typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            isTyping = false;
+        }
+
+        string sentence = sentences.Dequeue();
         typingCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
@@ -73,12 +62,11 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(text_speed);
         }
         isTyping = false;
-
     }
+
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
         Debug.Log("End of conversation");
     }
-
 }
