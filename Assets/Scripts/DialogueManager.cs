@@ -12,17 +12,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI DialogueText;
     public float text_speed = 0.2f;
-
     public bool dialogue_done = false;
-
     public Animator animator;
     public Queue<string> sentences;
     public bool isTyping = false;
-
     public Coroutine typingCoroutine;
-
-
-
 
     void Start()
     {
@@ -52,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         EndDialogue();
         dialogue_done = true;
     }
+    
     public void DisplayNextSentence()
     {
 
@@ -60,12 +55,14 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(EndTyping());
             return;
         }
+
         string sentence = sentences.Dequeue();
+
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypeSentence(sentence));
-
     }
+
     IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
