@@ -22,7 +22,7 @@ The protagonist attends a mysterious masked ball and faces challenges to overcom
 - [Belladone](https://github.com/Belladone-Bzz) : Game Design, Writing, Story and Narrative
 - [Pacal](https://github.com/Pascal-Caudron) : Game Design, Writing, Story and Narrative
 
-## Software used
+## Softwares used
 
 - Obsidian for idea organization
 - Unity
