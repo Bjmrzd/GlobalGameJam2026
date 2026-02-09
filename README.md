@@ -7,7 +7,7 @@ We started coding around 3 months ago, please be gentle
 
 ## The project
 
-This is a visual novel on the theme of ``masks``  
+This is a visual novel on the theme of ``masks``.
 The protagonist attends a mysterious masked ball and faces challenges to overcome in order to understand their destiny. They will meet many different characters along the journey  
 
 ## Team roles
